@@ -178,11 +178,11 @@ class FirebaseController extends Controller
 
     }
 
-    public function customorder($id)
+    public function customorder()
     {
-        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
-        $database = $factory->createDatabase();
-        $reference = $database->getReference('Services/' . $id)->getValue();
+//        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+//        $database = $factory->createDatabase();
+//        $reference = $database->getReference('Services/' )->getValue();
 
     }
 
