@@ -37,13 +37,19 @@ Route::get('/viewvendor/{id}/{value}', 'App\Http\Controllers\FirebaseController@
 Route::get('/deletecity/{id}/', 'App\Http\Controllers\FirebaseController@deletecity')->name('deletecity');
 Route::get('/serviceslist/', 'App\Http\Controllers\FirebaseController@serviceslist')->name('serviceslist');
 Route::get('/addservice/', 'App\Http\Controllers\FirebaseController@addservice')->name('addservice');
+Route::get('/addserviceman/', 'App\Http\Controllers\FirebaseController@addserviceman')->name('addserviceman');
 Route::get('/addvendor/', 'App\Http\Controllers\FirebaseController@addvendor')->name('addvendor');
 Route::get('/viewinvoice/{id}/', 'App\Http\Controllers\FirebaseController@viewinvoice')->name('viewinvoice');
 Route::get('/viewservice/{id}/', 'App\Http\Controllers\FirebaseController@viewservice')->name('viewservice');
+Route::get('/viewserviceman/{id}/', 'App\Http\Controllers\FirebaseController@viewserviceman')->name('viewserviceman');
+Route::get('/deleteserviceman/{id}/', 'App\Http\Controllers\FirebaseController@deleteserviceman')->name('deleteserviceman');
 Route::get('/deleteservice/{id}/', 'App\Http\Controllers\FirebaseController@deleteservice')->name('deleteservice');
 Route::get('/deletesubservice/{id}/', 'App\Http\Controllers\FirebaseController@deletesubservice')->name('deletesubservice');
 Route::get('/settings', 'App\Http\Controllers\FirebaseController@settings')->name('settings');
 Route::get('/chartt', 'App\Http\Controllers\ChartsController@renderChart')->name('renderChart');
+Route::get('/servicemen', 'App\Http\Controllers\FirebaseController@getServicemen')->name('servicemen');
+Route::get('/customorder', 'App\Http\Controllers\FirebaseController@customorder')->name('customorder');
+
 
 Route::get('/reports', function () {
     return view('reports');
@@ -52,6 +58,7 @@ Route::get('/ordercomparison', function () {
     return view('ordercomparison');
 });
 
+Route::post('/createcustomorder', 'App\Http\Controllers\FirebaseController@createcustomorder')->name('createcustomorder');
 Route::post('/savecommision', 'App\Http\Controllers\FirebaseController@savecommision')->name('savecommision');
 Route::post('/savevendor', 'App\Http\Controllers\FirebaseController@savevendor')->name('savevendor');
 Route::post('/savenewvendor', 'App\Http\Controllers\FirebaseController@savenewvendor')->name('savenewvendor');
@@ -60,5 +67,6 @@ Route::post('/editservice', 'App\Http\Controllers\FirebaseController@editservice
 Route::post('/addcity', 'App\Http\Controllers\FirebaseController@addcity')->name('addcity');
 Route::post('/savesterms', 'App\Http\Controllers\FirebaseController@savesterms')->name('savesterms');
 Route::post('/addsubservice', 'App\Http\Controllers\FirebaseController@addsubservice')->name('addsubservice');
-Route::get('/servicemen', 'App\Http\Controllers\FirebaseController@getServicemen')->name('servicemen');
+Route::post('/saveserviceman/', 'App\Http\Controllers\FirebaseController@saveserviceman')->name('saveserviceman');
+
 

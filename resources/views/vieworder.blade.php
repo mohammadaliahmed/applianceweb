@@ -70,7 +70,13 @@
                         </div>
                         <div class="col-6">
                             <p> Building type: {{$order['buildingType']}}</p>
-                            <p> Address: {{$order['user']['googleAddress']}}</p>
+                            @if(isset($order['user']['googleAddress']))
+                                <p> Address: {{$order['user']['googleAddress']}}</p>
+
+                            @else
+                                <p> Address: {{$order['user']['address']}}</p>
+
+                            @endif
 
                         </div>
 
@@ -96,7 +102,22 @@
 
                 </div>
                 <div class="card-body">
-                    {{$order['instructions']}}
+
+                    @if(isset($order['instructions']))
+                        {{$order['instructions']}}
+
+
+                    @endif
+                        <div class="row">
+
+                            @foreach($order['orderImages'] as $after=>$value)
+                                <div class="col-lg-2 col-6">
+                                    <a href="{{$value}}" target="_blank"> <img width="100"
+                                                                                                   class="img-thumbnail mt-1"
+                                                                                                   src="{{$value}}"></a>
+                                </div>
+                            @endforeach
+                        </div>
                 </div>
 
                 <!-- /.card-body -->
@@ -164,7 +185,7 @@
                 <!-- /.card-header -->
                 @if(!empty($pictures))
                     <div class="card-body">
-                        0
+
                         @if($pictures['before']!=null)
                             <p> Before Work Pictures</p>
                             <div class="row">
@@ -198,7 +219,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-6">
                                 At Shop
-                                @if($pictures['shop']!=null)
+                                @if(isset($pictures['shop']))
                                     <a href="{{$pictures['shop']}}" target="_blank"> <img width="100"
                                                                                           class="img-thumbnail"
                                                                                           src="{{$pictures['shop']}}"></a>
@@ -206,7 +227,7 @@
                             </div>
                             <div class="col-lg-6 col-6">
                                 Client Signed
-                                @if($pictures['client']!=null)
+                                @if(isset($pictures['client']))
                                     <a href="{{$pictures['client']}}" target="_blank"> <img width="100"
                                                                                             class="img-thumbnail"
                                                                                             src="{{$pictures['client']}}"></a>

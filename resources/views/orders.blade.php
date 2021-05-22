@@ -57,7 +57,7 @@
                                     @if(isset($order['user']['googleAddress']))
                                         <td style="width: 500px">{{$order['user']['googleAddress']}}</td>
                                     @else
-                                        <td style="width: 500px"></td>
+                                        <td style="width: 500px">{{$order['user']['address']}}</td>
                                     @endif
                                     <td>Rs.{{$order['totalPrice']}}</td>
                                     <td>

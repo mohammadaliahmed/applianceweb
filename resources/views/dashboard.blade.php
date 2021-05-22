@@ -9,6 +9,15 @@
 @section('content')
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
+
+        <div class="m-6 d-flex justify-content-end">
+
+            <a href="customorder/">
+                <button  type="button" class="m-2 btn btn-outline-info">Add Custom Order</button>
+
+            </a>
+        </div>
+
         <div class="row">
             <div class="col-lg-2 col-6">
                 <!-- small box -->
@@ -83,7 +92,8 @@
                     <div class="icon">
                         <i class="far fa-user-secret"></i>
                     </div>
-                    <a href="servicemen" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="servicemen" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <div class="col-lg-2 col-6">
@@ -161,7 +171,7 @@
     <script>
         const chart = new Chartisan({
             el: '#chartorders',
-            url: "@chart('sample_chart')"+ "?year=2021",
+            url: "@chart('sample_chart')" + "?year=2021",
             hooks: new ChartisanHooks()
                 .colors(['#ec0109'])
                 .responsive()
@@ -173,7 +183,7 @@
         });
         const chartservices = new Chartisan({
             el: '#chartservices',
-            url: "@chart('services_order_chart')"+ "?year=2021",
+            url: "@chart('services_order_chart')" + "?year=2021",
             hooks: new ChartisanHooks()
                 .colors(['#BE6693'])
                 .responsive()

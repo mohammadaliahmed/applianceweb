@@ -178,6 +178,14 @@ class FirebaseController extends Controller
 
     }
 
+    public function customorder($id)
+    {
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $reference = $database->getReference('Services/' . $id)->getValue();
+
+    }
+
     public function viewvendor($id)
     {
 
@@ -312,6 +320,38 @@ class FirebaseController extends Controller
 
     }
 
+    public function createcustomorder(Request $request)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+
+        $updates = [
+            'username' => $request->username,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'active' => true,
+            'approved' => true,
+            'password' => $request->password,
+            'picUrl' => " ",
+            'fcmKey' => " ",
+            'city' => $request->city,
+            'commission' => $request->commission,
+            'cnic' => $request->cnic,
+            'officePhone' => $request->officePhone,
+            'officeAddress' => $request->officeAddress,
+            'homeAddress' => $request->homeAddress,
+
+        ];
+
+        $database->getReference('Vendors/' . $request->username)// this is the root reference
+        ->update($updates);
+        return redirect()->route('vendors');
+
+    }
+
     public function savecommision(Request $request)
     {
 
@@ -334,6 +374,12 @@ class FirebaseController extends Controller
     public function addservice()
     {
         return view('addservice');
+    }
+
+    public function addserviceman()
+    {
+
+        return view('addserviceman');
     }
 
     public function saveservice(Request $request)
@@ -389,6 +435,37 @@ class FirebaseController extends Controller
 
     }
 
+    public function saveserviceman(Request $request)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $milliseconds = round(microtime(true) * 1000);
+
+
+        $updates = [
+            'name' => $request->name,
+            'username' => $request->username,
+            'password' => $request->password,
+            'id' => $request->username,
+            'mobile' => $request->mobile,
+            'age' => (int)$request->age,
+            'eid' => (int)$request->eid,
+            'role' => $request->role,
+            'imageUrl' => " ",
+            'active' => true,
+
+        ];
+//        return $updates;
+
+        $database->getReference('Servicemen/' . $request->username . "/")// this is the root reference
+        ->update($updates);
+        return redirect()->route('servicemen');
+
+
+    }
+
     public function editservice(Request $request)
     {
 
@@ -435,6 +512,7 @@ class FirebaseController extends Controller
 
 
     }
+
 
     public function addcity(Request $request)
     {
@@ -529,6 +607,30 @@ class FirebaseController extends Controller
             ->with('service', $service)
             ->with('subserviceslist', $subserviceslist);
 
+
+    }
+
+    public function viewserviceman($id)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $serviceman = $database->getReference('Servicemen/' . $id)->getValue();// this is the root reference
+
+        return view('editserviceman', compact('serviceman'));
+
+    }
+
+    public function deleteserviceman($id)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $serviceman = $database->getReference('Servicemen/' . $id)->remove();// this is the root reference
+
+        return redirect()->route('servicemen');
 
     }
 
