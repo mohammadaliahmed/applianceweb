@@ -108,16 +108,17 @@
 
 
                     @endif
-                        <div class="row">
-
+                    <div class="row">
+                        @if(isset($order['orderImages']))
                             @foreach($order['orderImages'] as $after=>$value)
                                 <div class="col-lg-2 col-6">
                                     <a href="{{$value}}" target="_blank"> <img width="100"
-                                                                                                   class="img-thumbnail mt-1"
-                                                                                                   src="{{$value}}"></a>
+                                                                               class="img-thumbnail mt-1"
+                                                                               src="{{$value}}"></a>
                                 </div>
                             @endforeach
-                        </div>
+                        @endif
+                    </div>
                 </div>
 
                 <!-- /.card-body -->
