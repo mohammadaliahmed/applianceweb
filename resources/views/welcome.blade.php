@@ -407,6 +407,8 @@
         </div>
     @endif
     <center>
+        <img src="uploads/logo.jpg" width="400"><br>
+
         <h1>
             Welcome to Mr Appliance Admin
             <br>

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75b59b8e-b1bd-4360-889c-ef802774da2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +15,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vieworder.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vieworder.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/vieworder.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="441">
               <caret line="127" column="27" lean-forward="true" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="409" column="45" lean-forward="false" selection-start-line="409" selection-start-column="45" selection-end-line="409" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -136,8 +144,8 @@
         <option value="$PROJECT_DIR$/resources/views/customorder.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vieworder.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -229,7 +237,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="fi&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;welcom&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/welcome.blade.php&#10;fireb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/appliance/routes/web.php&#10;viewor&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/vieworder.blade.php&#10;fire&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;servi&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;dashboard&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;edits&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editserviceman.blade.php&#10;service&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;editserviceman&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editserviceman.blade.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/appliance/routes/web.php&#10;addserviceman&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;adds&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;addser&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;servicem&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;orders&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/orders.blade.php&#10;addservice&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addservice.blade.php&#10;serv&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/serviceslist.blade.php&#10;das&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;dasb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;menu&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/lang/vendor/adminlte/en/menu.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/layouts/app.blade.php&#10;editservice&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editservice.blade.php&#10;viewser&#9;null&#9;null&#10;dashb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;inb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/invoice.blade.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/appliance/.env&#10;firebase&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/appliance/vendor/laravel/jetstream/stubs/livewire/resources/views/api/index.blade.php&#10;dash&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/appliance/.env&#10;invoices&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoices.blade.php&#10;invoice&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoice.blade.php&#10;invo&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoice.blade.php&#10;downlo&#9;null&#9;null&#10;repor&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/reports.blade.php&#10;ord&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/orders.blade.php&#10;viewve&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;Vendo&#9;FILE&#9;file://C:/xampp/htdocs/fixit/app/Charts/VendorOrdersMonthlyChart.php&#10;vend&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/vendors.blade.php&#10;viewven&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/auth/login.blade.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/fixit/vendor/consoletvs/charts/src/Registrar.php&#10;firebas&#9;FILE&#9;file://C:/xampp/htdocs/fixit/app/Http/Controllers/FirebaseController.php&#10;order&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/orders.blade.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;servicesl&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/serviceslist.blade.php&#10;adm&#9;FILE&#9;file://C:/xampp/htdocs/fixit/config/adminlte.php&#10;viewv&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="wel&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/welcome.blade.php&#10;fi&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;welcom&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/welcome.blade.php&#10;fireb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;web&#9;FILE&#9;file://C:/xampp/htdocs/appliance/routes/web.php&#10;viewor&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/vieworder.blade.php&#10;fire&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;servi&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;dashboard&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;edits&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editserviceman.blade.php&#10;service&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;editserviceman&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editserviceman.blade.php&#10;we&#9;FILE&#9;file://C:/xampp/htdocs/appliance/routes/web.php&#10;addserviceman&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;adds&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;addser&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addserviceman.blade.php&#10;servicem&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/servicemen.blade.php&#10;orders&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/orders.blade.php&#10;addservice&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/addservice.blade.php&#10;serv&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/serviceslist.blade.php&#10;das&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;dasb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;menu&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/lang/vendor/adminlte/en/menu.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/layouts/app.blade.php&#10;editservice&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/editservice.blade.php&#10;viewser&#9;null&#9;null&#10;dashb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;inb&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/invoice.blade.php&#10;env&#9;FILE&#9;file://C:/xampp/htdocs/appliance/.env&#10;firebase&#9;FILE&#9;file://C:/xampp/htdocs/appliance/app/Http/Controllers/FirebaseController.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/appliance/vendor/laravel/jetstream/stubs/livewire/resources/views/api/index.blade.php&#10;dash&#9;FILE&#9;file://C:/xampp/htdocs/appliance/resources/views/dashboard.blade.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/appliance/.env&#10;invoices&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoices.blade.php&#10;invoice&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoice.blade.php&#10;invo&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/invoice.blade.php&#10;downlo&#9;null&#9;null&#10;repor&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/reports.blade.php&#10;ord&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/orders.blade.php&#10;viewve&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;Vendo&#9;FILE&#9;file://C:/xampp/htdocs/fixit/app/Charts/VendorOrdersMonthlyChart.php&#10;vend&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/vendors.blade.php&#10;viewven&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;login&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/auth/login.blade.php&#10;regis&#9;FILE&#9;file://C:/xampp/htdocs/fixit/vendor/consoletvs/charts/src/Registrar.php&#10;firebas&#9;FILE&#9;file://C:/xampp/htdocs/fixit/app/Http/Controllers/FirebaseController.php&#10;order&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/orders.blade.php&#10;view&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/viewvendor.blade.php&#10;servicesl&#9;FILE&#9;file://C:/xampp/htdocs/fixit/resources/views/serviceslist.blade.php&#10;adm&#9;FILE&#9;file://C:/xampp/htdocs/fixit/config/adminlte.php" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -347,12 +355,12 @@
       <workItem from="1615973847163" duration="942000" />
       <workItem from="1616153097613" duration="6128000" />
       <workItem from="1620968778781" duration="15808000" />
-      <workItem from="1621331843932" duration="13208000" />
+      <workItem from="1621331843932" duration="13431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91989000" />
+    <option name="totallyTimeSpent" value="92212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -754,14 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -782,6 +782,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="127" column="27" lean-forward="true" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="409" column="45" lean-forward="false" selection-start-line="409" selection-start-column="45" selection-end-line="409" selection-end-column="45" />
           <folding />
         </state>
       </provider>
