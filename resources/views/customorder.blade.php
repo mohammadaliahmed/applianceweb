@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Add Custom Order</h1>
+    <h1 xmlns:wire="http://www.w3.org/1999/xhtml">Add Custom Order</h1>
 @stop
 
 @section('content')
@@ -14,8 +14,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Add service </h3>
+                        <h3 class="card-title">Add Customer Details </h3>
                         <br>
+
 
 
                         <div class="card-tools">
@@ -28,23 +29,10 @@
                         <form role="form" action="{{ route('createcustomorder') }}" method="POST"
                               enctype="multipart/form-data">
                             @csrf
-                            <div class="d-flex justify-content-center">
-                                <div class="file-upload-wrapper"><input type="file" id="file" name="logo"
-                                                                        value="logo.png"
-                                                                        accept="image/x-png"
 
-                                    >
-                                    <input
-                                            hidden
-                                            type="text" class="file-upload-input" value="logo.png">
-
-                                </div>
-                                <br><br>
-
-                            </div>
-
+                            <h1>Step 1</h1>
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <!-- textarea -->
                                     <div class="form-group">
                                         <label>Name</label>
@@ -54,76 +42,83 @@
 
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <!-- textarea -->
                                     <div class="form-group">
-                                        <label>Position</label>
-                                        <input type="number" class="form-control" required
-                                               name="position"
+                                        <label>Phone</label>
+                                        <input type="text" class="form-control" required
+                                               name="phone"
 
                                                placeholder="Type Here">
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <br>
-                                    <input type="checkbox"
-                                           name="offeringCommercialService">Offering Residential service
+                                <div class="col-sm-6">
+                                    <!-- textarea -->
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" required
+                                               name="address"
 
-
-                                    <br>
-                                    <input type="checkbox"
-                                           name="offeringResidentialService">Offering Commercial service
-                                    <br>
-                                    <input type="checkbox"
-                                           name="offeringVillaService">
-                                    Offering Villa service
+                                               placeholder="Type Here">
+                                    </div>
                                 </div>
+                                {{--<div class="col-sm-3">--}}
+                                {{--Building Type:--}}
+                                {{--<br>--}}
+                                {{--<input type="radio" name="buildingType" value="Residential">--}}
+                                {{--<label for="male">Residential</label><br>--}}
+                                {{--<input type="radio" name="buildingType" value="Commercial">--}}
+                                {{--<label for="female">Commercial</label><br>--}}
+                                {{--<input type="radio" name="buildingType" value="Villa">--}}
+                                {{--<label for="other">Villa</label>--}}
+                                {{--</div>--}}
 
                             </div>
+                            <br>
+                            <hr>
+                            Choose Service
+                            <hr>
                             <br>
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <!-- textarea -->
-                                    <div class="form-group">
-                                        <label>Base Price</label>
-                                        <input type="number" class="form-control" required
-                                               name="serviceBasePrice"
-                                               placeholder="Type Here">
+                                <div class="col-6  border-right">
+                                    <h1>Step 2</h1>
+                                    <hr>
+                                    @foreach($services as $service)
+
+                                        <input class="m-5" type="radio" name="serviceName" id="toggle"
+                                               value="{{$service['name']}} ">
+                                        <img src="{{$service['imageUrl']}}" width="150"/>
+                                        {{--                                        <label for="ServiceName">{{$service['name']}}</label><br>--}}
+                                    @endforeach
+                                </div>
+                                <div class="col-6">
+                                    <h1>Step 3</h1>
+                                    <hr>
+                                    <div id="loadingimg" class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
                                     </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <!-- textarea -->
-                                    <div class="form-group">
-                                        <label>Peak Price</label>
-                                        <input type="number" class="form-control"
-                                               name="peakPrice"
-                                               placeholder="Type Here">
+                                    <div class="row">
+
+
+                                        <div class="col-lg-4" id="subservices">
+                                        </div>
+
+
                                     </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Commercial service Peak Price</label>
-                                    <input type="number" class="form-control"
-                                           name="commercialServicePeakPrice"
-                                           placeholder="Type Here">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Commercial service Price</label>
-                                    <input type="number" class="form-control"
-                                           name="commercialServicePrice"
-                                           placeholder="Type Here">
+
                                 </div>
 
-                            </div>
-                            <div class="row">
-                                <label>Description</label>
-                                <textarea type="text" class="form-control" required
 
-                                          name="description"
-                                          placeholder="Type Here"> </textarea>
                             </div>
+                            <hr>
+                            <h1>Step 4</h1>
+
+                            Select Date <input autocomplete="off" class="date  form-control" name="date" type="text" required>
                             <br>
-                            <br>
-                            <div class="d-flex justify-content-center">
+                            Enter Time <input class="form-control" name="time" type="text" required>
+
+
+                            <div class="d-flex m-5 justify-content-center">
                                 <button class="btn btn-success col-2" type="submit">Save</button>
 
 
@@ -148,4 +143,54 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+        $('.date').datepicker({
+            format: 'dd-MM-yyyy'
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#loadingimg').hide();
+            $('input[type=radio][name=serviceName]').change(function () {
+                $('#loadingimg').show();
+                var $data = $('#subservices');
+                $data.empty();
+
+                var vvvv = this.value;
+                console.log(vvvv);
+                $.ajax({
+                    type: 'POST',
+                    url: '{{url('/getsubservices/')}}',
+                    data: {
+                        'serviceName': vvvv,
+                        '_token': '{{csrf_token()}}'
+
+                    },
+                    success: function (data) {
+
+                        $data.empty();
+
+                        data.forEach(function (item) {
+
+                            // create an unordered list node
+//                            var $ul = $('<ul>' + item['name'] + '</ul>');
+                            var $ul = $('<input type="checkbox" id="subsearvices" value="' + item['name'] + '" name="subservice[]"/><label for="ServiceName"> ' + item['name'] + '</label><br>');
+
+                            $data.append($ul);
+
+                        });
+                        $('#loadingimg').hide();
+                        // append list node to parent node
+
+
+                    }
+                })
+            });
+
+        });
+
+    </script>
+
 @stop

@@ -15,6 +15,7 @@ use Kreait\Firebase\ServiceAccount;
 
 class FirebaseController extends Controller
 {
+    public $search = '';
 
     public function __construct()
     {
@@ -178,13 +179,6 @@ class FirebaseController extends Controller
 
     }
 
-    public function customorder()
-    {
-//        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
-//        $database = $factory->createDatabase();
-//        $reference = $database->getReference('Services/' )->getValue();
-
-    }
 
     public function viewvendor($id)
     {
@@ -320,37 +314,6 @@ class FirebaseController extends Controller
 
     }
 
-    public function createcustomorder(Request $request)
-    {
-
-
-        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
-        $database = $factory->createDatabase();
-
-        $updates = [
-            'username' => $request->username,
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'active' => true,
-            'approved' => true,
-            'password' => $request->password,
-            'picUrl' => " ",
-            'fcmKey' => " ",
-            'city' => $request->city,
-            'commission' => $request->commission,
-            'cnic' => $request->cnic,
-            'officePhone' => $request->officePhone,
-            'officeAddress' => $request->officeAddress,
-            'homeAddress' => $request->homeAddress,
-
-        ];
-
-        $database->getReference('Vendors/' . $request->username)// this is the root reference
-        ->update($updates);
-        return redirect()->route('vendors');
-
-    }
 
     public function savecommision(Request $request)
     {
@@ -606,6 +569,114 @@ class FirebaseController extends Controller
         return view('editservice')
             ->with('service', $service)
             ->with('subserviceslist', $subserviceslist);
+
+
+    }
+
+    public function createcustomorder(Request $request)
+    {
+
+//        return $request;
+
+        $orderId = 20210526001;
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $username = strtolower(str_replace(" ", "", $request->name));
+        $milliseconds = round(microtime(true) * 1000);
+
+        $userOrders = [
+            $orderId => $orderId];
+
+        $userObject = [
+            'username' => $username,
+            'firstname' => $request->name,
+            'lastname' => " ",
+            'fullName' => $username,
+            'phone' => "".$request->phone,
+            'active' => true,
+            'approved' => true,
+            'password' => $username,
+            'time' => $milliseconds,
+            'fcmKey' => " ",
+            'email' => $username . '@gmail.com',
+            'address' => $request->address,
+            'numberVerified' => true,
+            'totalOrder' => 0,
+            'totalPayment' => 0,
+            'Orders'=>$userOrders
+        ];
+        $orderObject=[
+            "user"=>$userObject,
+            "time"=>$milliseconds,
+            "totalHours"=>0,
+            "totalPrice"=>150,
+            "tax"=>0,
+            "startJourneyLng"=>0,
+            "startJourneyLat"=>0,
+            "serviceName"=>$request->serviceName,
+            "serviceCharges"=>0,
+            "rating"=>0,
+            "rated"=>0,
+            "orderStatus"=>"Under Process",
+            "orderId"=>$orderId,
+            "orderAddress"=>$request->address,
+            "chosenTime"=>$request->time,
+            "modifiedOrderConfirmed"=>false,
+            "materialBill"=>0,
+            "lon"=>0,
+            "lat"=>0,
+            "jobStarted"=>0,
+            "jobStartTime"=>0,
+            "jobFinish"=>false,
+            "jobDone "=>false,
+            "jobEndTime "=>0,
+            "date"=>$request->date,
+            "customOrder"=>true,
+            "couponApplied"=>false,
+            "cancelled"=>false,
+            "arrived"=>false,
+            "assigned"=>false,
+            "buildingType"=>"Residential",
+
+        ];
+
+        $database->getReference('Orders/' . $orderId)// this is the root reference
+        ->update($orderObject);
+
+        $database->getReference('Users/' . $username)// this is the root reference
+        ->update($userObject);
+        return redirect()->route('orders');
+
+    }
+
+
+    public function customorder()
+    {
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $services = $database->getReference('Services/')->getValue();
+//        $subservices = $database->getReference('SubServices/')->getValue();// this is the root reference
+
+        return view('customorder', compact('services'));
+
+    }
+
+    public function getsubservices(Request $request)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $services = $database->getReference('Services/')->getValue();
+
+        $subservicesz = $database->getReference('SubServices/')->getValue();// this is the root reference
+        $subservices = array();
+        foreach ($subservicesz as $subservice) {
+            if ($subservice['parentService'] == $request->serviceName) {
+                array_push($subservices, $subservice);
+            }
+        }
+        return $subservices;
 
 
     }

@@ -68,5 +68,5 @@ Route::post('/addcity', 'App\Http\Controllers\FirebaseController@addcity')->name
 Route::post('/savesterms', 'App\Http\Controllers\FirebaseController@savesterms')->name('savesterms');
 Route::post('/addsubservice', 'App\Http\Controllers\FirebaseController@addsubservice')->name('addsubservice');
 Route::post('/saveserviceman/', 'App\Http\Controllers\FirebaseController@saveserviceman')->name('saveserviceman');
-
+Route::post('/getsubservices/', 'App\Http\Controllers\FirebaseController@getsubservices')->name('getsubservices');
 
