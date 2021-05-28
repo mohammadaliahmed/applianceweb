@@ -16,6 +16,7 @@ use Kreait\Firebase\ServiceAccount;
 class FirebaseController extends Controller
 {
     public $search = '';
+    public $myhashmap = array();
 
     public function __construct()
     {
@@ -576,13 +577,34 @@ class FirebaseController extends Controller
     public function createcustomorder(Request $request)
     {
 
-//        return $request;
-
-        $orderId = 20210526001;
+        $orderId = date("Ymd") . '001';;
         $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
         $database = $factory->createDatabase();
         $username = strtolower(str_replace(" ", "", $request->name));
         $milliseconds = round(microtime(true) * 1000);
+
+        $counttt = array();
+        foreach ($request->subservice as $subsr) {
+            $service = [
+
+                "active" => true,
+                "id" => $subsr,
+                "max" => 10,
+                "measureUnit" => "t",
+                "min" => 0,
+                "name" => $subsr,
+                "parentService" => $request->serviceName,
+                "timeHour" => 1,
+                "timeMin" => 0,
+
+            ];
+            $countModelArrayList = [
+                "quantity" => 1,
+                "time" => $milliseconds,
+                "service" => $service];
+            array_push($counttt, $countModelArrayList);
+        }
+
 
         $userOrders = [
             $orderId => $orderId];
@@ -592,7 +614,7 @@ class FirebaseController extends Controller
             'firstname' => $request->name,
             'lastname' => " ",
             'fullName' => $username,
-            'phone' => "".$request->phone,
+            'phone' => "" . $request->phone,
             'active' => true,
             'approved' => true,
             'password' => $username,
@@ -603,40 +625,42 @@ class FirebaseController extends Controller
             'numberVerified' => true,
             'totalOrder' => 0,
             'totalPayment' => 0,
-            'Orders'=>$userOrders
+            'Orders' => $userOrders
         ];
-        $orderObject=[
-            "user"=>$userObject,
-            "time"=>$milliseconds,
-            "totalHours"=>0,
-            "totalPrice"=>150,
-            "tax"=>0,
-            "startJourneyLng"=>0,
-            "startJourneyLat"=>0,
-            "serviceName"=>$request->serviceName,
-            "serviceCharges"=>0,
-            "rating"=>0,
-            "rated"=>0,
-            "orderStatus"=>"Under Process",
-            "orderId"=>$orderId,
-            "orderAddress"=>$request->address,
-            "chosenTime"=>$request->time,
-            "modifiedOrderConfirmed"=>false,
-            "materialBill"=>0,
-            "lon"=>0,
-            "lat"=>0,
-            "jobStarted"=>0,
-            "jobStartTime"=>0,
-            "jobFinish"=>false,
-            "jobDone "=>false,
-            "jobEndTime "=>0,
-            "date"=>$request->date,
-            "customOrder"=>true,
-            "couponApplied"=>false,
-            "cancelled"=>false,
-            "arrived"=>false,
-            "assigned"=>false,
-            "buildingType"=>"Residential",
+        $orderObject = [
+            "user" => $userObject,
+            "time" => $milliseconds,
+            "totalHours" => 0,
+            "countModelArrayList" => $counttt,
+            "totalPrice" => 150,
+            "tax" => 0,
+            "startJourneyLng" => 0,
+            "startJourneyLat" => 0,
+            "serviceName" => $request->serviceName,
+            "instructions" => $request->instructions,
+            "serviceCharges" => 0,
+            "rating" => 0,
+            "rated" => false,
+            "orderStatus" => "Under Process",
+            "orderId" => $orderId,
+            "orderAddress" => $request->address,
+            "chosenTime" => $request->time,
+            "modifiedOrderConfirmed" => false,
+            "materialBill" => 0,
+            "lon" => 0,
+            "lat" => 0,
+            "jobStarted" => false,
+            "jobStartTime" => 0,
+            "jobFinish" => false,
+            "jobDone" => false,
+            "jobEndTime" => 0,
+            "date" => $request->date,
+            "customOrder" => true,
+            "couponApplied" => false,
+            "cancelled" => false,
+            "arrived" => false,
+            "assigned" => false,
+            "buildingType" => "Residential",
 
         ];
 
@@ -674,6 +698,7 @@ class FirebaseController extends Controller
         foreach ($subservicesz as $subservice) {
             if ($subservice['parentService'] == $request->serviceName) {
                 array_push($subservices, $subservice);
+                $myhashmap[$subservice['name']] = $subservice;
             }
         }
         return $subservices;
@@ -711,7 +736,7 @@ class FirebaseController extends Controller
 
         $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
         $database = $factory->createDatabase();
-        $id = explode("-", $id);
+        $id = explode(" - ", $id);
         $service_name = $id[0];
         $city = $id[1];
         $database->getReference('ServicesList/' . $city . '/' . $service_name)->remove();// this is the root reference
@@ -727,7 +752,7 @@ class FirebaseController extends Controller
 
         $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
         $database = $factory->createDatabase();
-        $id = explode("-", $id);
+        $id = explode(" - ", $id);
         $service_name = $id[0];
         $database->getReference('SubServices/' . $service_name)->remove();// this is the root reference
 

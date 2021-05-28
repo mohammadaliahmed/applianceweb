@@ -18,7 +18,6 @@
                         <br>
 
 
-
                         <div class="card-tools">
 
                         </div>
@@ -46,8 +45,9 @@
                                     <!-- textarea -->
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="text" class="form-control" required
+                                        <input type="number" class="form-control" required
                                                name="phone"
+
 
                                                placeholder="Type Here">
                                     </div>
@@ -112,14 +112,30 @@
                             </div>
                             <hr>
                             <h1>Step 4</h1>
+                            <div class="row">
+                                <div class="col-6">
+                                    Select Date <input autocomplete="off" class="date  form-control" name="date"
+                                                       type="text"
+                                                       required>
+                                </div>
+                                <div class="col-6">
 
-                            Select Date <input autocomplete="off" class="date  form-control" name="date" type="text" required>
+
+                                    Enter Time <input class="form-control" name="time" type="text" required>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <h1>Step 5</h1>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Instructions</label>
+                                <textarea class="form-control" name="instructions" id="exampleFormControlTextarea1"
+                                          rows="3"></textarea>
+                            </div>
                             <br>
-                            Enter Time <input class="form-control" name="time" type="text" required>
-
 
                             <div class="d-flex m-5 justify-content-center">
-                                <button class="btn btn-success col-2" type="submit">Save</button>
+                                <button class="btn btn-success col-2" type="submit">Save Order</button>
 
 
                             </div>

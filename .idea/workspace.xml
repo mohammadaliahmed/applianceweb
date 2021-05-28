@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/customorder.blade.php" afterPath="$PROJECT_DIR$/resources/views/customorder.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirebaseController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FirebaseController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1378">
-              <caret line="611" column="29" lean-forward="false" selection-start-line="611" selection-start-column="29" selection-end-line="611" selection-end-column="29" />
+            <state relative-caret-position="306">
+              <caret line="580" column="24" lean-forward="false" selection-start-line="580" selection-start-column="24" selection-end-line="580" selection-end-column="24" />
               <folding>
                 <element signature="e#40#67#0#PHP" expanded="true" />
               </folding>
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customorder.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customorder.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/customorder.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="115" column="65" lean-forward="false" selection-start-line="115" selection-start-column="65" selection-end-line="115" selection-end-column="65" />
+            <state relative-caret-position="2329">
+              <caret line="137" column="94" lean-forward="false" selection-start-line="137" selection-start-column="94" selection-end-line="137" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -53,15 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addserv</find>
-      <find>viewserviceman</find>
-      <find>rem</find>
-      <find>saveservicem</find>
-      <find>customo</find>
-      <find>shop</find>
-      <find>add service</find>
-      <find>&lt;?php if($pictures['shop']!=null)</find>
-      <find>regis</find>
       <find>createcustomorder</find>
       <find>compact</find>
       <find>createcus</find>
@@ -83,6 +73,15 @@
       <find>milise</find>
       <find>millise</find>
       <find>assign</find>
+      <find>&quot;</find>
+      <find>rated</find>
+      <find>jobst</find>
+      <find>getsubser</find>
+      <find>servicenam</find>
+      <find>servicenAME</find>
+      <find>phone</find>
+      <find>step 4</find>
+      <find>label</find>
     </findStrings>
     <replaceStrings>
       <replace>$customer</replace>
@@ -141,8 +140,8 @@
         <option value="$PROJECT_DIR$/resources/views/livewire/counter.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Livewire/Counter.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" />
         <option value="$PROJECT_DIR$/resources/views/customorder.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php" />
       </list>
     </option>
   </component>
@@ -426,12 +425,12 @@
       <workItem from="1616153097613" duration="6128000" />
       <workItem from="1620968778781" duration="15808000" />
       <workItem from="1621331843932" duration="14576000" />
-      <workItem from="1622003908406" duration="15829000" />
+      <workItem from="1622003908406" duration="25609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109186000" />
+    <option name="totallyTimeSpent" value="118966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -466,11 +465,11 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22441365" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21055438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -844,21 +843,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/customorder.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1378">
-          <caret line="611" column="29" lean-forward="false" selection-start-line="611" selection-start-column="29" selection-end-line="611" selection-end-column="29" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="2329">
+          <caret line="137" column="94" lean-forward="false" selection-start-line="137" selection-start-column="94" selection-end-line="137" selection-end-column="94" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/customorder.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FirebaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="115" column="65" lean-forward="false" selection-start-line="115" selection-start-column="65" selection-end-line="115" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="580" column="24" lean-forward="false" selection-start-line="580" selection-start-column="24" selection-end-line="580" selection-end-column="24" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
