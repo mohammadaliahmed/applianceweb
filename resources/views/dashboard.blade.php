@@ -102,12 +102,12 @@
                     <div class="inner">
                         <h3>1</h3>
 
-                        <p>Reports</p>
+                        <p>Accounts</p>
                     </div>
                     <div class="icon">
                         <i class="far fa-user-secret"></i>
                     </div>
-                    <a href="reports" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="accounts" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

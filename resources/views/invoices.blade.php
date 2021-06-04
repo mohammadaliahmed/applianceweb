@@ -35,12 +35,10 @@
                             <thead>
                             <tr>
                                 <th>Sr #</th>
-                                <th>Bill number</th>
-                                <th>Order Number</th>
+                                <th>Invoice number</th>
                                 <th>Total Price</th>
                                 <th>Name</th>
                                 <th>Phone</th>
-                                <th>City</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -56,22 +54,16 @@
 
                                             <td>{{$invoice['invoiceId']}}</td>
 
-                                            <td>{{$invoice['order']['orderId']}}</td>
-                                            <td>{{$invoice['order']['totalPrice']}}</td>
-                                            @if(isset($invoice['order']['user']['firstname']))
-                                                <td>{{$invoice['order']['user']['firstname'].' '.$invoice['order']['user']['lastname']}}</td>
-                                            @endif
-                                            @if(isset($invoice['order']['user']['city']))
-                                                <td>{{$invoice['order']['user']['city']}}</td>
-                                            @endif
-                                            @if(isset($invoice['order']['user']['mobile']))
-                                                <td>{{$invoice['order']['user']['mobile']}}</td>
-                                            @endif
-                                            @if(isset($invoice['order']['user']['city']))
-                                                <td>{{$invoice['order']['user']['city']}}</td>
-                                            @else
-                                                <td></td>
-                                            @endif
+                                            <td>{{$invoice['total']}}</td>
+                                            <td>{{$invoice['user']["firstname"]}}</td>
+                                            <td>
+                                                @if(isset($invoice['user']["mobile"]))
+                                                    {{$invoice['user']["mobile"]}}
+                                                @else  {{$invoice['user']["phone"]}}
+                                                @endif
+                                            </td>
+
+
                                             <td>
                                                 <a href="viewinvoice/{{$invoice['invoiceId']}}">
                                                     <button class="btn btn-primary">View</button>

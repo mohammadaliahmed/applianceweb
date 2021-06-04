@@ -10,6 +10,8 @@
 @section('content')
     {{--order details--}}
     <div class="row">
+        {{--        <a class="btn btn-primary" href="{{ URL::to('createPDF/'.$invoice['invoiceId']) }}">Export to PDF</a>--}}
+
         <div class="col-12">
             <!-- Default box -->
             <div class="invoice p-3 mb-3">
@@ -17,46 +19,53 @@
                 <div class="row">
                     <div class="col-12">
                         <h4>
-                            <i class="fas fa-globe"></i> mrappliance
-                            <small class="float-right">Date: {{date("d-M-Y ", $invoice['time']/1000)}}</small>
+                            <img width="200" src="{{asset("uploads/logo.jpg")}}">
+                            <small class="float-right">Invoice #: {{$invoice['invoiceId']}}
+                                <br>Date: {{date("d-M-Y ", $invoice['time']/1000)}}</small>
                         </h4>
                     </div>
                     <!-- /.col -->
                 </div>
                 <!-- info row -->
-                <div class="row invoice-info">
-                    <div class="col-sm-4 invoice-col">
-                        From
-                        <address>
-                            <strong>mrappliance</strong><br>
-                            {{--795 Folsom Ave, Suite 600<br>--}}
-                            {{--San Francisco, CA 94107<br>--}}
-                            {{--Phone: (804) 123-5432<br>--}}
-                            {{--Email: info@almasaeedstudio.com--}}
-                        </address>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-4 invoice-col">
-                        To
-                        <address>
-                            <strong>{{$invoice['order']['user']['firstname'].' '.$invoice['order']['user']['lastname']}}</strong><br>
-                            {{$invoice['order']['user']['googleAddress']}}<br>
-                            Phone: {{$invoice['order']['user']['mobile']}}<br>
-                            Email: {{$invoice['order']['user']['email']}}
-                        </address>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-4 invoice-col">
-                        <b>Invoice #{{$invoice['invoiceId']}}</b><br>
-                        <br>
-                        <b>Order ID:</b> {{$invoice['order']['orderId']}}<br>
-                        <b>Service Type:</b> {{$invoice['order']['serviceName']}}<br>
-                        <b>Building Type:</b> {{$invoice['order']['buildingType']}}<br>
 
+                <br>
+
+                <div class="row invoice-info">
+                    <div class="col-12">
+                        <div class="float-left">
+                            From<br>
+                            <strong>Mr. Appliance</strong><br>
+                            Service Center #2, Albade building ahmeri,Dubai<br>
+                            043700033, 0556363186<br>
+                            https://mrappliance.com<br>
+                            services@mrappliance.info<br>
+                        </div>
+
+
+                        <!-- /.col -->
+                        <div class="float-right">
+                            To
+                            <br>
+                            <strong>{{$invoice['user']['firstname'].' '.$invoice['user']['lastname']}}</strong><br>
+                            @if(isset($invoice['user']['googleAddress']))
+                                {{$invoice['user']['googleAddress']}}<br>
+                            @else
+                                {{$invoice['user']['address']}}<br>
+                            @endif
+                            Phone: @if(isset($invoice['user']["mobile"]))
+                                {{$invoice['user']["mobile"]}}
+                            @else  {{$invoice['user']["phone"]}}
+                            @endif
+                            <br>
+                            Email: {{$invoice['user']['email']}}
+
+                        </div>
+                        <!-- /.col -->
                     </div>
                     <!-- /.col -->
                 </div>
                 <!-- /.row -->
+
 
                 <!-- Table row -->
                 <div class="row">
@@ -66,21 +75,26 @@
                             <tr>
                                 <th>Sr #</th>
                                 <th>Service name</th>
+                                <th>Rate</th>
                                 <th>Quantity</th>
+                                <th>Amount</th>
 
                             </tr>
                             </thead>
                             <tbody>
 
                             @php($count=1)
-                            @foreach($invoice['order']['countModelArrayList'] as $item)
-                                <tr>
-                                    <td>{{$count}}</td>
-                                    <td>{{$item['service']['name']}}</td>
-                                    <td>{{$item['quantity']}}</td>
 
-                                </tr>
-                                @php($count++)
+                            @foreach ($invoice['invoiceItems'] as $key => $value) {
+                            <tr>
+                                <td>{{$count}}</td>
+                                <td style="width: 900px;">{{$value['description']}}</td>
+                                <td>{{$value['price']}}</td>
+                                <td>{{$value['quantity']}}</td>
+                                <td>{{$value['price']*$value['quantity']}}</td>
+
+                            </tr>
+                            @php($count++)
                             @endforeach
                             </tbody>
                         </table>
@@ -90,36 +104,24 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <!-- accepted payments column -->
-                    <div class="col-6">
+
+                    <div class="col-3">
 
                     </div>
-                    <!-- /.col -->
-                    <div class="col-6">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-3">
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <th style="width:50%">Total Time:</th>
-                                    <td>{{$invoice['order']['totalHours']}} hours</td>
-                                </tr>
-                                <tr>
-                                    <th style="width:50%">Subtotal:</th>
-                                    <td>{{$invoice['order']['totalHours']}}x{{$invoice['order']['serviceCharges']}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Material Bill:</th>
-                                    <td>{{$invoice['order']['materialBill']}}</td>
-                                </tr>
-                                <tr>
-                                    <th>10% mat. bill:</th>
-                                    <td>Rs {{$invoice['order']['materialBill']/10}}</td>
-                                </tr>
-
-                                <tr>
-                                    <th>Total</th>
-                                    <td>{{$invoice['order']['totalPrice']}}</td>
+                                    <th style="width:50%">Total</th>
+                                    <td>{{$invoice["total"]}}</td>
                                 </tr>
 
 
@@ -127,17 +129,16 @@
                             </table>
                         </div>
                     </div>
-                    <!-- /.col -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
 
                 <!-- this row will not appear when printing -->
                 <div class="row no-print">
                     <div class="col-12">
                         <button onclick="window.print()" target="_blank" class="btn btn-default"><i
-                                    class="fas fa-print"></i> Print</button>
+                                    class="fas fa-print"></i> Print
+                        </button>
                         {{--<button class="btn btn-default" onclick="window.print()">Print this page</button>--}}
-
 
 
                     </div>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Charts\SampleChart;
 use App\CommonFunctions;
 use App\Models\Orders;
+use Barryvdh\DomPDF\Facade as PDF;
+
+
 use Chartisan\PHP\ChartData;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
@@ -162,6 +165,77 @@ class FirebaseController extends Controller
 
         return view('invoice')->with('invoice', $invoice);
 
+    }
+
+    public function expenses()
+    {
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+        $reference = $database->getReference('Expenses/');
+
+        $expenses = $reference->getValue();
+
+        return view('expenses')->with('expenses', $expenses);
+
+    }
+
+    public function rejectexpense($id)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+
+        $updates = [
+            'status' => "Rejected"
+
+        ];
+
+        $database->getReference('Expenses/' . $id)// this is the root reference
+        ->update($updates);
+        return Redirect::back()->with('message', 'Operation Successful !');
+
+    }
+
+    public function approveexpense($id)
+    {
+
+
+        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+        $database = $factory->createDatabase();
+
+        $updates = [
+            'status' => "Approved"
+
+        ];
+
+        $database->getReference('Expenses/' . $id)// this is the root reference
+        ->update($updates);
+        return Redirect::back()->with('message', 'Operation Successful !');
+
+    }
+
+    public function createPDF($id)
+    {
+        // retreive all records from db
+
+        // share data to view
+//        $factory = (new Factory)->withServiceAccount(__DIR__ . '/Firebase.json');
+//        $database = $factory->createDatabase();
+//        $reference = $database->getReference('Invoices/' . $id);
+//
+//        $invoice = $reference->getValue();
+//
+//        view()->share('invoice', $invoice);
+//
+////        $pdf = PDF::loadView('pdf_view', $invoice);
+//
+//
+//        $pdf = PDF::loadView('invoice',$invoice)->setOptions(['defaultFont' => 'sans-serif']);
+//
+//        return $pdf->download('invoice.pdf');
+
+        // download PDF file with download method
     }
 
     public function vieworder($id)
@@ -802,4 +876,5 @@ class FirebaseController extends Controller
 
 
     }
+
 }

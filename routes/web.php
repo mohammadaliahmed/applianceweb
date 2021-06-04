@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/accounts', function () {
+    return view('accounts');
+});
 //
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
@@ -49,6 +52,10 @@ Route::get('/settings', 'App\Http\Controllers\FirebaseController@settings')->nam
 Route::get('/chartt', 'App\Http\Controllers\ChartsController@renderChart')->name('renderChart');
 Route::get('/servicemen', 'App\Http\Controllers\FirebaseController@getServicemen')->name('servicemen');
 Route::get('/customorder', 'App\Http\Controllers\FirebaseController@customorder')->name('customorder');
+Route::get('/createPDF/{id}', 'App\Http\Controllers\FirebaseController@createPDF')->name('createPDF');
+Route::get('/expenses', 'App\Http\Controllers\FirebaseController@expenses')->name('expenses');
+Route::get('/rejectexpense/{id}', 'App\Http\Controllers\FirebaseController@rejectexpense')->name('rejectexpense');
+Route::get('/approveexpense/{id}', 'App\Http\Controllers\FirebaseController@approveexpense')->name('approveexpense');
 
 
 Route::get('/reports', function () {
